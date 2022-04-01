@@ -1,8 +1,7 @@
 def is_palindrome(phrase):
     """Is phrase a palindrome?
 
-    Return True/False if phrase is a palindrome (same read backwards and
-    forwards).
+    Return True/False if phrase is a palindrome (same read backwards and forwards).
 
         >>> is_palindrome('tacocat')
         True
@@ -21,3 +20,9 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+    
+    phrase_clean = phrase.lower().replace(' ', '')
+    reverse_list = list(phrase_clean)
+    reverse_list.reverse()
+    reverse_phrase = "".join(reverse_list)
+    return phrase_clean == reverse_phrase
